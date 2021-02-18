@@ -63,8 +63,8 @@ public class Cal2 extends HttpServlet {
 		//session.setAttribute("btn", btn);
 			Cookie valueCookie = new Cookie("value", String.valueOf(v));
 			Cookie btnCookie = new Cookie("btn", btn);
-			valueCookie.setPath("/cal");
-			btnCookie.setPath("/cal");
+			valueCookie.setPath("/");
+			btnCookie.setPath("/");
 			resp.addCookie(valueCookie);
 			resp.addCookie(btnCookie);
 		}
