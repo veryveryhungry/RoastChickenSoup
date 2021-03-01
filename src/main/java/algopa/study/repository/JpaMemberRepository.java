@@ -28,6 +28,20 @@ public class JpaMemberRepository implements MemberRepository{
     }
 
     @Override
+    public Optional<Member> findById(Long id) {
+        List<Member> result = em.createQuery("select m from Member m where m.id = :id", Member.class)
+                .setParameter("id", id)
+                .getResultList();
+        System.out.println(result);
+        return result.stream().findAny();
+    }
+
+    @Override
+    public void deleteById(Long id) {
+        Optional<Member> member = findById(id);
+        em.remove(findById(id).get());
+    }
+    @Override
     public List<Member> findAll() {
         return em.createQuery("select m from Member m", Member.class)
                 .getResultList();

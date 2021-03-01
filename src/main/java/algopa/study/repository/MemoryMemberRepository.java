@@ -15,11 +15,24 @@ public class MemoryMemberRepository implements MemberRepository{
         return member;
     }
 
+
+
     @Override
     public Optional<Member> findByName(String name) {
         return store.values().stream()
                 .filter(member -> member.getName().equals(name))
                 .findAny();
+    }
+
+    @Override
+    public Optional<Member> findById(Long id) {
+        return store.values().stream()
+                .filter(member -> member.getId().equals(id))
+                .findAny();
+    }
+    @Override
+    public void deleteById(Long id) {
+        store.remove(findById(id));
     }
 
     @Override
