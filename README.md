@@ -6,10 +6,12 @@
 개설된 리포지토리입니다. 
 
 ### 210214 Database를 연동한 회원조회 창 만들기 (made by kth990303)
--Spring Boot와 JPA를 이용하여 MySQL 데이터베이스를 연동해 만든 회원조회 창입니다.
--아래와 같이 회원가입 폼에서 회원가입을 하면 가입이 완료됩니다. 
+ 1. Spring Boot와 JPA를 이용하여 MySQL 데이터베이스를 연동해 만든 회원조회 창입니다.
+ 2. 아래와 같이 회원가입 폼에서 회원가입을 하면 가입이 완료됩니다. 
+ 3. 삭제 버튼을 누르면, 회원 정보가 삭제되며, db에서도 정보를 삭제합니다.
+<img width="948" alt="210301 crud" src="https://user-images.githubusercontent.com/57135043/110191258-c4e66a00-7e6a-11eb-9bce-845c6695d3db.png">
 <img width="960" alt="210214_form" src="https://user-images.githubusercontent.com/57135043/108195338-fbc63b80-715a-11eb-8f3c-774623739959.png">
-<img width="959" alt="210214_crud2" src="https://user-images.githubusercontent.com/57135043/108195374-041e7680-715b-11eb-8f23-01a83fb30f22.png">
+
 ### Settings And Libraries
 Spring Boot 2.4.2\
 MySQL 8.0.19\
