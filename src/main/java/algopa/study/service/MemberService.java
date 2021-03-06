@@ -24,7 +24,10 @@ public class MemberService {
         memberRepository.save(member);
         return member.getId();
     }
-
+    public void deleteMember(Long id){
+        System.out.println(id+"번 삭제하러 service까진 잘 작동됨");
+        memberRepository.deleteById(id);
+    }
     private void checkDuplicateMember(Member member) {
         memberRepository.findByName(member.getName())
                 .ifPresent(m -> {
