@@ -2,18 +2,22 @@ package algopa.study.service;
 
 import algopa.study.domain.Member;
 import algopa.study.repository.MemberRepository;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
+@Component
 @Transactional
+@Getter @Setter
+@RequiredArgsConstructor
 public class MemberService {
     private final MemberRepository memberRepository;
-
-    public MemberService(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository;
-    }
 
     /*
      * 회원 가입
@@ -25,7 +29,6 @@ public class MemberService {
         return member.getId();
     }
     public void deleteMember(Long id){
-        System.out.println(id+"번 삭제하러 service까진 잘 작동됨");
         memberRepository.deleteById(id);
     }
     private void checkDuplicateMember(Member member) {
